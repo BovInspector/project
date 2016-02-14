@@ -73,14 +73,14 @@ a buffer is first declared or the entry of program. BOF is he statement label th
 <h3>
 <a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Compile testcase to LLVM bitcode</h3>
 
- KLEE is built on top of LLVM. The first steps are to get a working LLVM installation.You may install llvm-gccand build LLVM 2.9.To run a program with KLEE, you first compile it to LLVM bitcode using llvm-gcc to generate the LLVM bitcode file src.bc.You may run:<br>
+ KLEE is built on top of LLVM. The first steps are to get a working LLVM installation.You may install llvm-gcc and build LLVM 2.9.To run a program with KLEE, you first compile it to LLVM bitcode using llvm-gcc to generate the LLVM bitcode file src.bc.You may run:<br>
 <code>   &nbsp llvm-gcc --emit-llvm -c -g src.c</code>
 <h3>
 <a id="creating-pages-manually" class="anchor" href="#creating-pages-manually" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Generate warning paths</h3>
 
-<p>Pass framework is a very important part of the LLVM system.LLVM optimization and conversion work is done by several Pass. Like assembly line operations, each pass completes a specific optimization.buildCFG.so is a shared object complied by LLVM pass we relized which we used to build CFG ,analyse reachablity in the graph and get warning path set.
+<p>Pass framework is a very important part of the LLVM system.Each pass is used to do optimization and conversion work in LLVM.buildCFG.so is a shared object complied by LLVM pass we relized and we use it to build CFG ,analyse reachablity in the graph and get warning path set.
 
-We use opt to dynamic load shared object buildCFG.so.Use following command to generate GuideSrc.txt.<br>
+We use opt to dynamic load shared object buildCFG.so and following command to generate GuideSrc.txt.<br>
 
 <code> &nbsp opt –load ./buildCFG.so –buildCFG 
 –targetList=./checklist_bufferoverflow /dev/null </code><br>
@@ -89,6 +89,7 @@ GuideSrc.txt is consist of several warning paths.A warning path is consist of br
 
 <div class="highlight"><pre><code class="language-c" data-lang="c"><span class="k">src.c 11</span>
 <span>src.c 18</span></code></pre></div>
+During the process of symbolic execution,  GuideSrc.txt will be readed in and the path set in the text will be validated.
 <h3>
 <a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Run klee</h3>
 
