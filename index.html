@@ -73,7 +73,7 @@ of another program is fundamentally undecided.</p>
 <a id="tool" class="anchor" href="#creating-pages-manually" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Tool</h3>
 
 <p>We implemented BovInspector on <a href="http://klee.github.io/">KLEE</a>, a state-of-the-art symbolic execution engine built on top of the <a href="http://llvm.org/">LLVM compiler
-infrastructure</a>. The static buffer overflow detector used in our experiments is HP Fortify version 3.2.
+infrastructure</a>. We extended functions of klee from two directions: guided symbolic execution and buffer overflow validation.The static buffer overflow detector used in our experiments is HP Fortify version 3.2.
 We used <a href="https://github.com/BovInspector/project/blob/master/bin/fvdlParser.rar">fvdlParser</a> to convert the results of Fortify into static buffer overflow warning.
 We uesd <a href="https://github.com/BovInspector/project/blob/master/bin/buildCFG.rar">buildCFG.so</a> which is a LLVM pass to build CFG ,analyse reachablity in the graph and get warning path set.
 We modified source code of <a href="https://github.com/BovInspector/project/blob/master/bin/klee.rar">klee</a> to inspect buffer overflow warnings.With the position of buffer overflow in the 
@@ -82,7 +82,9 @@ source code, we used <a href="https://github.com/BovInspector/project/blob/maste
 <h3>
 <a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Experiment</h3>
 
-<p>To evaluate our method, we designed two sets of experiments. The first set of experiments
+<p>All experiments were conducted on a quad-core machine
+with an Intel Core (TM) Corei5-2400 3.10GHz processor and
+4G memory, running Linux 3.11.0.To evaluate our method, we designed two sets of experiments. The first set of experiments
 is designed to evaluate the correctness and accuracy of our method. The second set of experiments is designed to check
 the scalability and effectiveness of our method for real-world open source programs. Through these experiments, we hope to
 answer the following key research questions: (1) How much effort can a developer save by validating buffer overflow warnings
