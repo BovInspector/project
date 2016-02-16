@@ -13,7 +13,7 @@ BovInspector can be used in the following steps:
 
 	make -j $(grep -c processor /proc/cpuinfo) ENABLE_OPTIMIZED=1
 
-5. Use klee to inspect buffer overflows with command line option --guided-execution and additional input file GuideSrc.txt.    
+5. Use our extended klee to inspect buffer overflows with command line option --guided-execution and additional input file GuideSrc.txt.    
 
 6. Use python repair.py to repair the vulnerabilities that have been validated. Specially, when we need to repair sprintf buffer overflow, we need copy these two files MY_vsnprintf.h and MY_vsnprintf.c to the directory where the repaired source file is. This is because we need to compute the format length to compare with the size of destination buffer.
 
