@@ -33,19 +33,19 @@
       <section id="main_content" class="inner">
         <h3>
 <a id="sample" class="anchor" href="#sample" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sample</h3>
-<div class="highlight"><pre><code class="language-c" data-lang="c"><span class="k">#include &lt stdio.h &gt </span>
-<span class="k">#include &lt string.h &gt </span>
-
-<span class="k">char buf[2];</span>
-<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">char* src = "yes";</span>
-  
-  <span class="k">if</span> <span class="p">(</span><span class="n">src[0]</span> <span class="o">==</span> <span class="mi">'y'</span><span class="p">)</span>
-    <span class="k">printf("recieved!\n");</span>
-  <span class="k">else{</span>
-    <span class="k">strcpy(buf, src);</span>
-    <span class="kt">printf("%s\n", buf);</span>
-  <span class="k">}</span>
+<div class="highlight"><pre><code class="language-c" data-lang="c"><span class="k">1. #include &lt stdio.h &gt </span>
+<span class="k">2. #include &lt string.h &gt </span>
+<span class="k">3. </span>
+<span class="k">4. char buf[2];</span>
+<span class="kt">5. int</span> <span class="nf">main</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">6.  char* src = "yes";</span>
+<span class="k">7.</span>
+<span class="k">8.  if</span> <span class="p">(</span><span class="n">src[0]</span> <span class="o">==</span> <span class="mi">'y'</span><span class="p">)</span>
+    <span class="k">9. printf("recieved!\n");</span>
+  <span class="k">10. else{</span>
+    <span class="k">11. strcpy(buf, src);</span>
+    <span class="kt">12. printf("%s\n", buf);</span>
+  <span class="k">13. }</span>
   
   <span class="k">src = "nooooo";</span>
   
