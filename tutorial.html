@@ -38,24 +38,24 @@
 <span class="k">3. </span>
 <span class="k">4. char buf[2];</span>
 <span class="kt">5. int</span> <span class="nf">main</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span>
-<span class="k">6.  char* src = "yes";</span>
+<span class="k">6. char* src = "yes";</span>
 <span class="k">7.</span>
-<span class="k">8.  if</span> <span class="p">(</span><span class="n">src[0]</span> <span class="o">==</span> <span class="mi">'y'</span><span class="p">)</span>
-    <span class="k">9. printf("recieved!\n");</span>
-  <span class="k">10. else{</span>
-    <span class="k">11. strcpy(buf, src);</span>
-    <span class="kt">12. printf("%s\n", buf);</span>
-  <span class="k">13. }</span>
-  
-  <span class="k">src = "nooooo";</span>
-  
-  <span class="k">if(src[0] == 'n'){</span> 
-    <span class="k">strcpy(buf, src);</span> 
-    <span class="kt">printf("%s\n", buf);</span>
-  <span class="k">}</span> 
-  <span class="k">else</span>
-    <span class="k">return 0;</span> 
-<span class="p">}</span></code></pre></div>
+<span class="k">8. if</span> <span class="p">(</span><span class="n">src[0]</span> <span class="o">==</span> <span class="mi">'y'</span><span class="p">)</span>
+<span class="k">9.  printf("recieved!\n");</span>
+<span class="k">10. else{</span>
+<span class="k">11.  strcpy(buf, src);</span>
+<span class="k">12.  printf("%s\n", buf);</span>
+<span class="k">13. }</span>
+<span class="k">14. </span>  
+<span class="k">15. src = "nooooo";</span>
+<span class="k">16. src = "nooooo";</span>
+<span class="k">17. if(src[0] == 'n'){</span> 
+<span class="k">18.   strcpy(buf, src);</span> 
+<span class="k">19.   printf("%s\n", buf);</span>
+<span class="k">20. }</span> 
+<span class="k">21. else</span>
+<span class="k">22.   return 0;</span> 
+<span class="p">23. }</span></code></pre></div>
 <h3>
 <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Extract the results of Fortify</h3>
 <p>Extract the results of Fortify.Use <code>./fvdlParser audit.fvdl</code> to get static buffer overflow warnings. We save these warnings in the file checklist_bufferoverflow.In this sample ,checklist_bufferoverflow is:</p>
