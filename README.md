@@ -4,9 +4,9 @@ BovInspector can be used in the following steps:
 
 1. Extract the results of Fortify. Use ./fvdlParser audit.fvdl file to get static buffer overflow warnings. We save these warnings in the file checklist_bufferoverflow.   
 
-2. Install llvm2.9.Compile the testcase to LLVM bitcode.  
+2. Install llvm2.9.Compile the testcase to LLVM bitcode,e.g. xx.bc.  
 
-3. Use opt –load ./buildCFG.so –buildCFG –targetList=./checklist_bufferoverflow >/dev/null to generate GuideSrc.txt. GuideSrc.txt is consist of warning paths.   
+3. Use opt –load ./buildCFG.so –buildCFG –targetList=./checklist_bufferoverflow <xx.bc>/dev/null to generate GuideSrc.txt. GuideSrc.txt is consist of warning paths.   
 
 4. Rebuild klee in dirctory src/klee symbolic execution,and the new executable file klee in the directory Release+Asserts/bin will be used in step 5.   
 	./configure --with-llvm=/home/$(whoami)/work/llvm-2.9 --with-stp=/home/$(whoami)/work/stp_install --with-uclibc=/home/$(whoami)/work/klee-uclibc --enable-posix-runtime   
